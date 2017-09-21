@@ -5,11 +5,6 @@ the task is to partition the input point set to K subsets such that
 points in each subset have the minimum distances to the centroid of their own subset
 then all other subsets' centroids. 
 
-**************************************
-Language: C++ or Java
-Due date:  C++ or Java soft copy: 5/20/2015 Wednesday before Midnight
-Due date:  C++ or Java hard copy: 5/21/2015 Thursday before noon
-
 *******************************
 I. input/output specificaions:
 *******************************
