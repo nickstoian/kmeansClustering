@@ -1,0 +1,63 @@
+Project 8: K-means clustering problem
+
+Given a list of points in x-y coordinates, and a cluster number, K, 
+the task is to partition the input point set to K subsets such that
+points in each subset have the minimum distances to the centroid of their own subset
+then all other subsets' centroids. 
+
+**************************************
+Language: C++ or Java
+Due date:  C++ or Java soft copy: 5/20/2015 Wednesday before Midnight
+Due date:  C++ or Java hard copy: 5/21/2015 Thursday before noon
+
+*******************************
+I. input/output specificaions:
+*******************************
+A. Input(1): a text file representing the list of points in x-y coordinates
+
+	for example:
+		40 50  // 40 rows and 50 columns of an image
+    		12  30 // the pixel is on row 12 and column 30
+     		10  21 // the pixel is on row 10 and column 21
+    		:	
+		:
+		:
+   Input(2): number of K cluster
+
+B. Output: a 2-D image where pixels are display with their label and
+	      blanks for those pixels without labels.
+
+
+********************************************
+III. Algorithm steps for K-means Clustering.
+********************************************
+step 0: prepare everyhing
+	   K <-- get from user.
+	   pointSet <-- get from input file
+	   
+step 1: Randomly partition pointSet into K groups, each point 
+	     is labeled with the label of the group it belongs to
+
+step 2: 2.1: Display the 2-D array of pixels with their labels
+	   2.2: For each group, gi,
+	     compute the centroid of gi, (ci(x), ci(y)), where 
+		ci(x)= sum of x's of all points gi= {(x, y)} in gi 
+				divides by number of points in gi
+ 		ci(y)= sum of y's of all points gi= {(x, y)} in gi 
+				divides by number of points in gi
+
+        repeat step 2  until all groups's centroid are computed
+
+step 3: for each point, p, in the input pointSet
+	   	compute the centroid distance, di(p,ci), from 
+			p to the centroids of each group gi, i = 1 to K
+
+	   min_i <-- determine which group, gi, that di(p,ci) is minimum
+		
+	   if min_i is not the same as p's old label
+		   		change p's label to min_i 
+        
+	   repeat step 3 until all points in pointSet are checked.
+            
+step 4: repeat step 2 to step 3 as long as there is a point that changes its label.
+
